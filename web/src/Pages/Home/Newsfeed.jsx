@@ -1,5 +1,7 @@
 import { useContext } from "react"
 import { UserContext } from "../../Contexts/UserContext"
+import { Header } from "../../Components/Header/Header"
+import { Footer } from "../../Components/Footer/Footer"
 
 export function Newsfeed() {
 
@@ -7,8 +9,12 @@ export function Newsfeed() {
 
 	return (
 		<>
-			<h1>Newsfeed</h1>
-			<button onClick={ () => setUsername( null ) }>Logout ({ username } )</button>
+			<Header />
+			<main>
+				<h1>Newsfeed</h1>
+				<button onClick={ () => setUsername( null ) }>Logout ({ username } )</button>
+			</main>
+			<Footer />
 		</>
 	)
 }
