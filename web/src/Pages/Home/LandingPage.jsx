@@ -11,8 +11,8 @@ export function LandingPage() {
 		<>
 			<Header />
 			<main>
-				<h1>LandingPage</h1>
-				<button onClick={ () => setUsername( "aisha" ) }>Login</button>
+				{/*<h1>LandingPage</h1>*/}
+				{/*<button onClick={ () => setUsername( "aisha" ) }>Login</button>*/}
 			</main>
 			<Footer />
 		</>
