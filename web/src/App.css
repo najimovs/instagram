@@ -4,6 +4,35 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+body.light footer {
+  background-color: #e6ebeb;
+  color: #000000;
+}
+
+body.dark {
+	background-color: #121212;
+     color: #ffffff;
+}
+body.dark footer {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+/* Light mode */
+body.light header {
+  background-color: #e6ebeb;
+  color: #000000;
+}
+
+/* Dark mode */
+body.dark header {
+  background-color: #222222;
+  color: #ffffff;
+}
+
 
 ul {
 	list-style-type: none;
@@ -83,7 +112,8 @@ footer {
 	background-color: black;
 	border-top: 1pt solid #404040;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
+	justify-content: space-between;
 	gap: 0.5rem;
 	padding: 2rem;
 }
@@ -114,9 +144,30 @@ footer button {
 footer .links {
 	display: flex;
 	gap: 1rem;
+	flex-wrap: wrap;
 }
 
 footer .tools {
 	display: flex;
 	gap: 0.5rem;
+}
+
+@media (max-width: 380px) {
+  footer {
+    flex-direction: column; /* ustma-ust joylashadi */
+    align-items: center;
+    text-align: center;
+  }
+
+  footer section:nth-child(2) {
+    order: -1; /* tools (Language, Light mode) tepaga chiqadi */
+  }
+
+  footer .links {
+    justify-content: center;
+  }
+
+  footer .tools {
+    justify-content: center;
+  }
 }
