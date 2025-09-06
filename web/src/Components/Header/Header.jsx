@@ -1,4 +1,10 @@
+import { useContext } from "react"
+import { LanguageContext } from "../../Contexts/LanguageContext"
+import { text } from "../../translate"
+
 export function Header() {
+
+	const [language] = useContext(LanguageContext)
 
 	return (
 		<header>
@@ -16,12 +22,12 @@ export function Header() {
 					</li>
 					<li>
 						<button>
-							<span>Login</span>
+							<span>{text[language].login}</span>
 						</button>
 					</li>
 					<li>
 						<button>
-							<span>Join</span>
+							<span>{text[language].join}</span>
 						</button>
 					</li>
 				</ul>
