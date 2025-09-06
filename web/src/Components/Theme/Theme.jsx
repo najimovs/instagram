@@ -14,6 +14,8 @@ export function Theme() {
 
 		document.documentElement.style.colorScheme = theme
 
+		localStorage.setItem( "app_theme", theme )
+
 	}, [ theme ] )
 
 	return (

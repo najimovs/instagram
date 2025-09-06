@@ -14,7 +14,7 @@ export function App() {
 
 	const [ language, setLanguage ] = useState( "english" )
 	const [ username, setUsername ] = useState( null )
-	const [ theme, setTheme ] = useState( matchMedia( "(prefers-color-scheme: dark)" ).matches ? "dark" : "light" )
+	const [ theme, setTheme ] = useState( getCurrentTheme() )
 
 	return <>
 		<LanguageContext.Provider value={ [ language, setLanguage ] }>
@@ -27,4 +27,16 @@ export function App() {
 			</UserContext.Provider>
 		</LanguageContext.Provider>
 	</>
+}
+
+function getCurrentTheme() {
+
+	const currentTheme = localStorage.getItem( "app_theme" )
+
+	if ( currentTheme === null ) {
+
+		return matchMedia( "(prefers-color-scheme: dark)" ).matches ? "dark" : "light"
+	}
+
+	return currentTheme
 }
