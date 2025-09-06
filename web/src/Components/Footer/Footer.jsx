@@ -5,7 +5,7 @@ export function Footer() {
 	const { theme, toggleTheme } = useContext(ThemeContext)
 
 	return (
-		<footer className={theme === "light" ? "light-footer" : "dark-footer"}>
+		<footer className={theme === "light" ? "light" : "dark"}>
 			<section>
 				<ul className="links">
 					<li><a href="/">About</a></li>
