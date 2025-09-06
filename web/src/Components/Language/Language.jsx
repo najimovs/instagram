@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import { LanguageContext } from "../../Contexts/LanguageContext"
+import { LanguageContext } from "@ctx/LanguageContext"
 
 export function Language() {
 

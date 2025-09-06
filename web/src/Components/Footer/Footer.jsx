@@ -1,5 +1,5 @@
-import { Language } from "../Language/Language"
-import { Theme } from "../Theme/Theme"
+import { Language } from "@components/Language/Language"
+import { Theme } from "@components/Theme/Theme"
 
 export function Footer() {
 

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import { ThemeContext } from "../../Contexts/ThemeContext"
+import { ThemeContext } from "@ctx/ThemeContext"
 
 export function Theme() {
 

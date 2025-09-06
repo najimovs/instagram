@@ -1,7 +1,7 @@
 import { useContext } from "react"
-import { UserContext } from "../../Contexts/UserContext"
-import { Header } from "../../Components/Header/Header"
-import { Footer } from "../../Components/Footer/Footer"
+import { UserContext } from "@ctx/UserContext"
+import { Header } from "@components/Header/Header"
+import { Footer } from "@components/Footer/Footer"
 
 export function Newsfeed() {
 
