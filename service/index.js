@@ -1,14 +1,19 @@
 import Fastify from "fastify"
+import cors from "@fastify/cors"
 
 const fastify = Fastify( {
 	logger: false,
+} )
+
+await fastify.register( cors, {
+	origin: true,
 } )
 
 const posts = {
 	alisher: [ 1, 2 ],
 	sobitxon: [ 3, 4 ],
 	asror: [ 5, 6, 7 ],
-	fidarvs: [ 8, 9, 10 ],
+	firdavs: [ 8, 9, 10 ],
 	zarnigor: [ 11 ],
 	javoxir: [],
 }
