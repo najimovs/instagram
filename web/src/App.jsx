@@ -16,7 +16,7 @@ import Join from "./Pages/Join/Join"
 export function App() {
 
 	const [ language, setLanguage ] = useState( getCurrentLanguage() )
-	const [ username, setUsername ] = useState( null )
+	const [ username, setUsername ] = useState( getCurrentUsername() )
 	const [ theme, setTheme ] = useState( getCurrentTheme() )
 
 	return <>
@@ -57,4 +57,9 @@ function getCurrentTheme() {
 	}
 
 	return currentTheme
+}
+
+function getCurrentUsername() {
+
+	return localStorage.getItem( "app_auth_username" )
 }

@@ -12,7 +12,13 @@ export function Newsfeed() {
 			<Header />
 			<main>
 				<h1>Newsfeed</h1>
-				<button onClick={ () => setUsername( null ) }>Logout ({ username } )</button>
+				<button onClick={ () => {
+
+					localStorage.removeItem( "app_auth_username" )
+
+					setUsername( null )
+
+				} }>Logout ({ username } )</button>
 			</main>
 			<Footer />
 		</>
