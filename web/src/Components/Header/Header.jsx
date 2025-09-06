@@ -9,8 +9,6 @@ export function Header() {
 
 	const navigate = useNavigate()
 
-	console.log(  )
-
 	return (
 		<header>
 			<nav>
