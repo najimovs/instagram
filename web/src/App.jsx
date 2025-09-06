@@ -14,7 +14,7 @@ export function App() {
 
 	const [ language, setLanguage ] = useState( "english" )
 	const [ username, setUsername ] = useState( null )
-	const [ theme, setTheme ] = useState( "light" )
+	const [ theme, setTheme ] = useState( matchMedia( "(prefers-color-scheme: dark)" ).matches ? "dark" : "light" )
 
 	return <>
 		<LanguageContext.Provider value={ [ language, setLanguage ] }>
