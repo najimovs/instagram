@@ -8,7 +8,10 @@ import { UserContext } from "./Contexts/UserContext"
 import { ThemeContext } from "./Contexts/ThemeContext"
 
 // Import pages
-import { Home } from "./Pages/Home/Home"
+import Home from "./Pages/Home/Home"
+import About from "./Pages/About/About"
+import Login from "./Pages/Login/Login"
+import Join from "./Pages/Join/Join"
 
 export function App() {
 
@@ -22,6 +25,9 @@ export function App() {
 				<ThemeContext.Provider value={ [ theme, setTheme ] }>
 					<Routes>
 						<Route path="/" element={ <Home /> } end />
+						<Route path="/about" element={ <About /> } end />
+						<Route path="/login" element={ <Login /> } end />
+						<Route path="/join" element={ <Join /> } end />
 					</Routes>
 				</ThemeContext.Provider>
 			</UserContext.Provider>

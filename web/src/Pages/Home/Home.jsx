@@ -3,7 +3,7 @@ import { UserContext } from "@ctx/UserContext"
 import { LandingPage } from "./LandingPage"
 import { Newsfeed } from "./Newsfeed"
 
-export function Home() {
+export default function() {
 
 	const [ username ] = useContext( UserContext )
 

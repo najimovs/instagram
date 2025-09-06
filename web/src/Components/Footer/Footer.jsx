@@ -1,3 +1,4 @@
+import { NavLink } from "react-router"
 import { Language } from "@components/Language/Language"
 import { Theme } from "@components/Theme/Theme"
 import { Text } from "@components/Text/Text"
@@ -9,19 +10,19 @@ export function Footer() {
 			<section>
 				<ul className="links">
 					<li>
-						<a href="/">
+						<NavLink to="/about" end>
 							<Text name="page_about" />
-						</a>
+						</NavLink>
 					</li>
 					<li>
-						<a href="/">
+						<NavLink to="/login" end>
 							<Text name="page_login" />
-						</a>
+						</NavLink>
 					</li>
 					<li>
-						<a href="/">
+						<NavLink to="/join" end>
 							<Text name="page_join" />
-						</a>
+						</NavLink>
 					</li>
 				</ul>
 				<p>Copyright &copy; App 2025. <Text name="rights" /></p>
