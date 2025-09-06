@@ -1,3 +1,5 @@
+import { Theme } from "../Theme/Theme"
+
 export function Footer() {
 
 	return (
@@ -19,7 +21,7 @@ export function Footer() {
 			<section>
 				<div className="tools">
 					<button>Language</button>
-					<button>Light mode</button>
+					<Theme />
 				</div>
 			</section>
 		</footer>

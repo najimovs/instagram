@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router"
 // Import contexts
 import { LanguageContext } from "./Contexts/LanguageContext"
 import { UserContext } from "./Contexts/UserContext"
+import { ThemeContext } from "./Contexts/ThemeContext"
 
 // Import pages
 import { Home } from "./Pages/Home/Home"
@@ -13,13 +14,16 @@ export function App() {
 
 	const [ language, setLanguage ] = useState( "english" )
 	const [ username, setUsername ] = useState( null )
+	const [ theme, setTheme ] = useState( "light" )
 
 	return <>
 		<LanguageContext.Provider value={ [ language, setLanguage ] }>
 			<UserContext.Provider value={ [ username, setUsername ] }>
-				<Routes>
-					<Route path="/" element={ <Home /> } end />
-				</Routes>
+				<ThemeContext.Provider value={ [ theme, setTheme ] }>
+					<Routes>
+						<Route path="/" element={ <Home /> } end />
+					</Routes>
+				</ThemeContext.Provider>
 			</UserContext.Provider>
 		</LanguageContext.Provider>
 	</>
