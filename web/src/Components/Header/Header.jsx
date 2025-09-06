@@ -1,3 +1,5 @@
+import { Text } from "@components/Text/Text"
+
 export function Header() {
 
 	return (
@@ -16,12 +18,16 @@ export function Header() {
 					</li>
 					<li>
 						<button>
-							<span>Login</span>
+							<span>
+								<Text name="page_login" />
+							</span>
 						</button>
 					</li>
 					<li>
 						<button>
-							<span>Join</span>
+							<span>
+								<Text name="page_join" />
+							</span>
 						</button>
 					</li>
 				</ul>

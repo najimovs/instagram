@@ -1,5 +1,6 @@
 import { Language } from "@components/Language/Language"
 import { Theme } from "@components/Theme/Theme"
+import { Text } from "@components/Text/Text"
 
 export function Footer() {
 
@@ -8,16 +9,22 @@ export function Footer() {
 			<section>
 				<ul className="links">
 					<li>
-						<a href="/">About</a>
+						<a href="/">
+							<Text name="page_about" />
+						</a>
 					</li>
 					<li>
-						<a href="/">Login</a>
+						<a href="/">
+							<Text name="page_login" />
+						</a>
 					</li>
 					<li>
-						<a href="/">Join</a>
+						<a href="/">
+							<Text name="page_join" />
+						</a>
 					</li>
 				</ul>
-				<p>Copyright &copy; App 2025. All rights reserved.</p>
+				<p>Copyright &copy; App 2025. <Text name="rights" /></p>
 			</section>
 			<section>
 				<div className="tools">
@@ -26,5 +33,5 @@ export function Footer() {
 				</div>
 			</section>
 		</footer>
-	);
+	)
 }
