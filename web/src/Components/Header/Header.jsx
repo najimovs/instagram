@@ -1,9 +1,15 @@
+import { useContext } from "react"
 import { useNavigate } from "react-router"
+import { UserContext } from "@ctx/UserContext"
 import { Text } from "@components/Text/Text"
 
 export function Header() {
 
+	const [ username, setUsername ] = useContext( UserContext )
+
 	const navigate = useNavigate()
+
+	console.log(  )
 
 	return (
 		<header>
@@ -22,20 +28,34 @@ export function Header() {
 							</svg>
 						</button>
 					</li>
-					<li>
+					{ username === null && <li>
 						<button onClick={ () => navigate( "/login" ) }>
 							<span>
 								<Text name="page_login" />
 							</span>
 						</button>
-					</li>
-					<li>
+					</li>}
+					{ username === null && <li>
 						<button onClick={ () => navigate( "/join" ) }>
 							<span>
 								<Text name="page_join" />
 							</span>
 						</button>
-					</li>
+					</li>}
+					{ username && <li>
+						<button
+							onClick={ () => {
+
+								localStorage.removeItem( "app_auth_username" )
+								setUsername( null )
+							} }
+						>
+							<span>
+								@{ username }
+							</span>
+						</button>
+					</li>}
+					
 				</ul>
 			</nav>
 		</header>
