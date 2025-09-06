@@ -1,3 +1,4 @@
+import { Language } from "../Language/Language"
 import { Theme } from "../Theme/Theme"
 
 export function Footer() {
@@ -20,10 +21,10 @@ export function Footer() {
 			</section>
 			<section>
 				<div className="tools">
-					<button>Language</button>
+					<Language />
 					<Theme />
 				</div>
 			</section>
 		</footer>
-	)
+	);
 }

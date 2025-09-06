@@ -12,7 +12,7 @@ import { Home } from "./Pages/Home/Home"
 
 export function App() {
 
-	const [ language, setLanguage ] = useState( "english" )
+	const [ language, setLanguage ] = useState( getCurrentLanguage() )
 	const [ username, setUsername ] = useState( null )
 	const [ theme, setTheme ] = useState( getCurrentTheme() )
 
@@ -27,6 +27,18 @@ export function App() {
 			</UserContext.Provider>
 		</LanguageContext.Provider>
 	</>
+}
+
+function getCurrentLanguage() {
+
+	const currentLanguage = localStorage.getItem( "app_language" )
+
+	if ( currentLanguage === null ) {
+
+		return "english"
+	}
+
+	return currentLanguage
 }
 
 function getCurrentTheme() {

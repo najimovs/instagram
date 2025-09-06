@@ -121,13 +121,64 @@ footer .tools {
 	gap: 0.5rem;
 }
 
-footer .tools button {
+footer .tools > button {
 	border: none;
 	background-color: transparent;
 }
 
-footer .tools svg {
+footer .tools > button svg {
 	width: 1rem;
 	height: 1rem;
 	fill: currentColor;
+}
+
+footer .tools .dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+footer .tools .dropdown button#langBtn {
+	padding: 0.4rem 0.8rem;
+	color: #c0c0c0;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition:
+		background 0.2s,
+		color 0.2s;
+}
+
+footer .tools .dropdown button#langBtn:hover {
+	color: #fff;
+}
+
+footer .tools .dropdown-menu {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	background-color: #202020;
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	width: max-content;
+	min-width: 100px;
+	z-index: 1000;
+	overflow: hidden;
+	display: none;
+}
+
+footer .tools .dropdown-menu.show {
+	display: block;
+}
+
+footer .tools .dropdown-menu div {
+	padding: 0.5rem 1rem;
+	color: #c0c0c0;
+	cursor: pointer;
+	transition:
+		background 0.2s,
+		color 0.2s;
+}
+
+footer .tools .dropdown-menu div:hover {
+	background-color: #404040;
+	color: #fff;
 }
