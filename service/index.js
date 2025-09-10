@@ -1,7 +1,15 @@
 import Fastify from "fastify"
 import cors from "@fastify/cors"
-import { posts } from "./posts.js"
+import { MongoClient } from "mongodb"
 
+// DB connection
+const mongoDB = new MongoClient( process.env.MONGODB_URL )
+await mongoDB.connect()
+
+// Collections
+const posts = mongoDB.db().collection( "posts" )
+
+// Server
 const fastify = Fastify( {
 	logger: false,
 } )
@@ -12,14 +20,9 @@ await fastify.register( cors, {
 
 fastify.get( "/posts", async function handler ( request, reply ) {
 
-	const username = request.headers.app_auth_username
+	// const username = request.headers.app_auth_username
 
-	if ( posts[ username ] ) {
-
-		return posts[ username ]
-	}
-
-	return []
+	return await posts.find().toArray()
 } )
 
 fastify.get( "/health", async function handler ( request, reply ) {

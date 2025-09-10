@@ -29,9 +29,9 @@ export function Newsfeed() {
 
 				<div className="wrapper">
 					<ul className="posts">
-						{ posts.map( ( url, i ) => (
-							<li key={ i }>
-								<img src={ url } />
+						{ posts.map( post => (
+							<li key={ post._id }>
+								<img src={ post.url } />
 							</li>
 						) ) }
 					</ul>
