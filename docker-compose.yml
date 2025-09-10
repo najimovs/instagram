@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: instagram-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: instagram
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - instagram-network
+
+  api:
+    build:
+      context: ./service
+      dockerfile: Dockerfile
+    container_name: instagram-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      MONGODB_URL: mongodb://admin:password123@mongodb:27017/instagram?authSource=admin
+    depends_on:
+      - mongodb
+    networks:
+      - instagram-network
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: instagram-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    networks:
+      - instagram-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  instagram-network:
+    driver: bridge

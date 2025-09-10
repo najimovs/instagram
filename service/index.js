@@ -32,7 +32,7 @@ fastify.get( "/health", async function handler ( request, reply ) {
 
 try {
 
-	await fastify.listen( { port: 3_000 } )
+	await fastify.listen( { port: 3000, host: '0.0.0.0' } )
 }
 catch ( err ) {
 

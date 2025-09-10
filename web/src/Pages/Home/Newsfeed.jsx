@@ -11,7 +11,7 @@ export function Newsfeed() {
 
 	useEffect( () => {
 
-		fetch( "http://localhost:3000/posts", {
+		fetch( "/api/posts", {
 			headers: {
 				"app_auth_username": username,
 			},
