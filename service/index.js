@@ -1,5 +1,6 @@
 import Fastify from "fastify"
 import cors from "@fastify/cors"
+import { posts } from "./posts.js"
 
 const fastify = Fastify( {
 	logger: false,
@@ -8,15 +9,6 @@ const fastify = Fastify( {
 await fastify.register( cors, {
 	origin: true,
 } )
-
-const posts = {
-	alisher: [ 1, 2 ],
-	sobitxon: [ 3, 4 ],
-	asror: [ 5, 6, 7 ],
-	firdavs: [ 8, 9, 10 ],
-	zarnigor: [ 11 ],
-	javoxir: [],
-}
 
 fastify.get( "/posts", async function handler ( request, reply ) {
 

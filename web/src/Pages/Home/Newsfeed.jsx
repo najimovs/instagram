@@ -26,21 +26,16 @@ export function Newsfeed() {
 		<>
 			<Header />
 			<main>
-				<h1>Newsfeed</h1>
 
-				<ul>
-					{ posts.map( ( post, i ) => (
-						<li key={ i }>{ post }</li>
-					) ) }
-				</ul>
-
-				<button onClick={ () => {
-
-					localStorage.removeItem( "app_auth_username" )
-
-					setUsername( null )
-
-				} }>Logout ({ username } )</button>
+				<div className="wrapper">
+					<ul className="posts">
+						{ posts.map( ( url, i ) => (
+							<li key={ i }>
+								<img src={ url } />
+							</li>
+						) ) }
+					</ul>
+				</div>
 			</main>
 			<Footer />
 		</>

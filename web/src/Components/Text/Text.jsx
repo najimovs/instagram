@@ -11,19 +11,30 @@ const translates = {
 		page_about: "About",
 		page_login: "Login",
 		page_join: "Join",
+
+		// Buttons
+		logout: "Logout",
 	},
 }
 
-export function Text( { name } ) {
+export function Text( props ) {
 
 	const [ language ] = useContext( LanguageContext )
 
-	const untranslated = `:${ name }`
+	const untranslated = `:${ props.name }`
 
 	if ( translates[ language ] ) {
 
+		if ( props.name === "logout" && props.username ) {
+
+			return <>
+				{ translates[ language ][ props.name ] || untranslated } ( { props.username } )
+			</>
+		}
+
+		// Common
 		return <>
-			{ translates[ language ][ name ] || untranslated }
+			{ translates[ language ][ props.name ] || untranslated }
 		</>
 	}
 

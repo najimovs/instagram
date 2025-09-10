@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { useNavigate } from "react-router"
 import { UserContext } from "@ctx/UserContext"
 import { Text } from "@components/Text/Text"
+import { Logout } from "@components/Auth/Logout"
 
 export function Header() {
 
@@ -40,20 +41,7 @@ export function Header() {
 							</span>
 						</button>
 					</li>}
-					{ username && <li>
-						<button
-							onClick={ () => {
-
-								localStorage.removeItem( "app_auth_username" )
-								setUsername( null )
-							} }
-						>
-							<span>
-								@{ username }
-							</span>
-						</button>
-					</li>}
-					
+					{ username && <Logout /> }
 				</ul>
 			</nav>
 		</header>
